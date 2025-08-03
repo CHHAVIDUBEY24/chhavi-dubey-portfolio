@@ -1,0 +1,1 @@
+<%response.sendRedirect("https://localhost:8080/FinalMVCProject/home");%>
