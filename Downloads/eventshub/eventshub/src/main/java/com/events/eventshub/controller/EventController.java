@@ -15,6 +15,12 @@ public class EventController {
     @Autowired
     private EventRepository eventRepository;
 
+    @GetMapping("/events")
+    public String listEvents(Model model) {
+        model.addAttribute("events", eventRepository.findAll());
+        return "events";
+    }
+
     @GetMapping("/admin/create-event")
     public String showEventForm(Model model) {
         model.addAttribute("event", new Event());
