@@ -279,8 +279,13 @@
 
 						<br>
 						<br>
-			            <h2>Java Backend Developer</h2>
-							<a href="https://github.com/CHHAVIDUBEY24" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+						<h2>Java Backend Developer</h2>
+						<p>
+							<a href="https://github.com/CHHAVIDUBEY24" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+							<a href="https://www.linkedin.com/in/chhavi-dubey24/" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">LinkedIn</a>
+							<a href="https://drive.google.com/file/d/1bYXsn1YpwpxZiEro2MXyawcIN-kpa9Iy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">Download CV</a>
+							<a href="mailto:chhavidubey2224@gmail.com" class="btn btn-white btn-outline-white py-3 px-4">Email</a>
+						</p>
 		            </div>
 		          </div>
 	        	</div>
@@ -316,37 +321,10 @@
 									</div>
 								  </div>
 
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>Java</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+								<!-- skills chart removed; inserting resume content as career objective -->
+								<div class="career-objective mt-3">
+									<p><strong>CAREER OBJECTIVE:</strong> Aspiring Software Engineer with strong proficiency in Java, Spring Boot, MySQL, and DSA. Passionate about building scalable products, writing clean &amp; testable code, and solving real-world problems with an ownership mindset. Eager to learn from mentorship while contributing to high-quality software development and collaborative engineering environments.</p>
 									
-									<span>Spring Boot</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Hibernate / JPA</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>MySQL</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>OOP Concepts</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -392,12 +370,12 @@
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
+          <!-- <div class="col-md-10 heading-section text-center ftco-animate">
           	<h1 class="big big-2">Resume</h1>
             <h2 class="mb-4">Resume</h2>
             <p><strong>CAREER OBJECTIVE:</strong> Aspiring Software Engineer with strong proficiency in Java, Spring Boot, MySQL, and DSA. Passionate about building scalable products, writing clean & testable code, and solving real-world problems with an ownership mindset. Eager to learn from mentorship while contributing to high-quality software development and collaborative engineering environments.</p>
             <p><a href="https://drive.google.com/file/d/1bYXsn1YpwpxZiEro2MXyawcIN-kpa9Iy/view?usp=drive_link" target="_blank" class="btn btn-primary py-3 px-5">Download CV</a></p>
-          </div>
+          </div> -->
         </div>
 
 		<div class="row">
@@ -690,6 +668,15 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
-    
+  <script>
+    // remove the LinkedIn button shown specifically in the About left panel
+    (function(){
+      var aboutLinkedIn = document.querySelector('#about-section .counter-wrap a[href="https://www.linkedin.com/in/chhavi-dubey24/"]');
+      if(aboutLinkedIn){
+        var p = aboutLinkedIn.closest('p');
+        if(p) p.remove(); else aboutLinkedIn.remove();
+      }
+    })();
+  </script>
   </body>
 </html>
