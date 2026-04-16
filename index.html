@@ -568,7 +568,59 @@
 		</div>
 	</section>
 
+<!-- CONTACT FORM - paste your Formspree ID below -->
+<div class="container mt-5 mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,189,57,0.2); border-radius: 8px; padding: 2.5rem;">
+        <h3 style="color:#fff; font-size:1.5rem; margin-bottom:0.3rem;">Send Me a Message</h3>
+        <p style="color:#999; font-size:14px; margin-bottom:2rem;">I'll get back to you within 24 hours.</p>
 
+        <form action="https://formspree.io/f/mjgjgnve" method="POST">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777; display:block; margin-bottom:6px;">Your Name</label>
+              <input type="text" name="name" placeholder="Your name" required
+                style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:12px 16px; border-radius:4px; font-family:'Poppins',sans-serif; font-size:14px; outline:none;"
+                onfocus="this.style.borderColor='rgba(255,189,57,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777; display:block; margin-bottom:6px;">Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com" required
+                style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:12px 16px; border-radius:4px; font-family:'Poppins',sans-serif; font-size:14px; outline:none;"
+                onfocus="this.style.borderColor='rgba(255,189,57,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777; display:block; margin-bottom:6px;">Subject</label>
+            <input type="text" name="subject" placeholder="Internship Opportunity / Project Collaboration"
+              style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:12px 16px; border-radius:4px; font-family:'Poppins',sans-serif; font-size:14px; outline:none;"
+              onfocus="this.style.borderColor='rgba(255,189,57,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          </div>
+          <div class="mb-4">
+            <label style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777; display:block; margin-bottom:6px;">Message</label>
+            <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required
+              style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:12px 16px; border-radius:4px; font-family:'Poppins',sans-serif; font-size:14px; outline:none; resize:vertical;"
+              onfocus="this.style.borderColor='rgba(255,189,57,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+          </div>
+
+          <!-- Hidden field so Formspree knows which email to deliver to -->
+          <input type="hidden" name="_replyto" value="chhavidubey2224@gmail.com">
+          <input type="hidden" name="_subject" value="New message from your portfolio!">
+
+          <button type="submit"
+            style="background:#ffbd39; color:#000; border:none; padding:14px 36px; border-radius:4px; font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:opacity 0.2s;"
+            onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            Send Message &#9993;
+          </button>
+          <p style="font-size:12px; color:#555; margin-top:1rem; margin-bottom:0;">🔒 Your details are kept private and never shared.</p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CONTACT FORM -->
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
