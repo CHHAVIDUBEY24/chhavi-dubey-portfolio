@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chhavi Dubey | Java Backend Developer & Software Engineer</title>
+  <meta name="description" content="Portfolio of Chhavi Dubey - Java Backend Developer specializing in Spring Boot, REST APIs, MySQL, Spring Security, and Data Structures & Algorithms.">
+  <meta name="keywords" content="Chhavi Dubey, Java Backend Developer, Spring Boot Developer, Software Engineer, REST APIs, MySQL, Java, Indore">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check text-accent"></i>
+    <span class="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <!-- ------------------------------------------------------------------------
+       NAVBAR HEADER
+       ------------------------------------------------------------------------ -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        &lt;CD<span class="dot">/</span>&gt;
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#terminal" class="nav-link">Dev Terminal</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://drive.google.com/file/d/1bYXsn1YpwpxZiEro2MXyawcIN-kpa9Iy/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-file-arrow-down"></i> Resume
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ------------------------------------------------------------------------
+       HERO SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span>Available for Java Backend & Software Engineering Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Chhavi Dubey</span>
+          </h1>
+
+          <div class="hero-typing-wrap">
+            <span>Core: </span>
+            <span id="hero-typing" class="typing-text"></span>
+            <span class="cursor"></span>
+          </div>
+
+          <p class="hero-description">
+            Computer Science Engineer specializing in <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>MySQL</strong>, and <strong>RESTful Microservices</strong>. Passionate about building high-performance backend systems with clean architecture, robust security, and scalable database schemas.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> Explore Projects
+            </a>
+            <a href="https://drive.google.com/file/d/1bYXsn1YpwpxZiEro2MXyawcIN-kpa9Iy/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+            <button class="btn btn-outline js-copy-email">
+              <i class="fa-regular fa-copy"></i> Copy Email
+            </button>
+          </div>
+
+          <div class="hero-tech-stack">
+            <span class="hero-tech-label">Primary Stack:</span>
+            <span class="tech-tag"><i class="fa-brands fa-java"></i> Java 17+</span>
+            <span class="tech-tag"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span class="tech-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+            <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> JWT Security</span>
+            <span class="tech-tag"><i class="fa-solid fa-vial"></i> JUnit 5</span>
+          </div>
+        </div>
+
+        <!-- Right Code Visualizer Card -->
+        <div class="hero-visualizer">
+          <div class="code-window">
+            <div class="code-header">
+              <div class="window-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="code-tabs">
+                <button class="code-tab active" id="tab-java">JobController.java</button>
+                <button class="code-tab" id="tab-json">Response.json</button>
+              </div>
+            </div>
+
+            <div class="code-body">
+              <!-- Java Code View -->
+              <div id="code-view-java">
+                <div class="code-line"><span class="line-num">01</span><span class="annotation">@RestController</span></div>
+                <div class="code-line"><span class="line-num">02</span><span class="annotation">@RequestMapping</span>(<span class="string-lit">"/api/v1/jobs"</span>)</div>
+                <div class="code-line"><span class="line-num">03</span><span class="annotation">@RequiredArgsConstructor</span></div>
+                <div class="code-line"><span class="line-num">04</span><span class="keyword">public class</span> <span class="class-name">JobController</span> {</div>
+                <div class="code-line"><span class="line-num">05</span>  <span class="keyword">private final</span> <span class="type-lit">JobService</span> jobService;</div>
+                <div class="code-line"><span class="line-num">06</span></div>
+                <div class="code-line"><span class="line-num">07</span>  <span class="annotation">@GetMapping</span>(<span class="string-lit">"/search"</span>)</div>
+                <div class="code-line"><span class="line-num">08</span>  <span class="annotation">@PreAuthorize</span>(<span class="string-lit">"hasAnyRole('USER', 'ADMIN')"</span>)</div>
+                <div class="code-line"><span class="line-num">09</span>  <span class="keyword">public</span> <span class="type-lit">ResponseEntity</span>&lt;<span class="type-lit">Page</span>&lt;<span class="type-lit">JobDTO</span>&gt;&gt; <span class="method-name">searchJobs</span>(</div>
+                <div class="code-line"><span class="line-num">10</span>      <span class="annotation">@RequestParam</span> <span class="type-lit">String</span> query,</div>
+                <div class="code-line"><span class="line-num">11</span>      <span class="annotation">@PageableDefault</span>(size = 10) <span class="type-lit">Pageable</span> pageable) {</div>
+                <div class="code-line"><span class="line-num">12</span>    <span class="keyword">return</span> <span class="type-lit">ResponseEntity</span>.ok(jobService.findJobs(query, pageable));</div>
+                <div class="code-line"><span class="line-num">13</span>  }</div>
+                <div class="code-line"><span class="line-num">14</span>}</div>
+              </div>
+
+              <!-- JSON Output View -->
+              <div id="code-view-json" style="display: none;">
+                <div class="code-line"><span class="line-num">01</span>{</div>
+                <div class="code-line"><span class="line-num">02</span>  <span class="string-lit">"status"</span>: 200,</div>
+                <div class="code-line"><span class="line-num">03</span>  <span class="string-lit">"message"</span>: <span class="string-lit">"Jobs fetched successfully"</span>,</div>
+                <div class="code-line"><span class="line-num">04</span>  <span class="string-lit">"data"</span>: {</div>
+                <div class="code-line"><span class="line-num">05</span>    <span class="string-lit">"totalElements"</span>: 142,</div>
+                <div class="code-line"><span class="line-num">06</span>    <span class="string-lit">"totalPages"</span>: 15,</div>
+                <div class="code-line"><span class="line-num">07</span>    <span class="string-lit">"content"</span>: [</div>
+                <div class="code-line"><span class="line-num">08</span>      {</div>
+                <div class="code-line"><span class="line-num">09</span>        <span class="string-lit">"id"</span>: <span class="string-lit">"job_8921"</span>,</div>
+                <div class="code-line"><span class="line-num">10</span>        <span class="string-lit">"title"</span>: <span class="string-lit">"Senior Java Backend Engineer"</span>,</div>
+                <div class="code-line"><span class="line-num">11</span>        <span class="string-lit">"stack"</span>: [<span class="string-lit">"Spring Boot"</span>, <span class="string-lit">"MySQL"</span>, <span class="string-lit">"JWT"</span>],</div>
+                <div class="code-line"><span class="line-num">12</span>        <span class="string-lit">"verifiedBy"</span>: <span class="string-lit">"Chhavi Dubey"</span></div>
+                <div class="code-line"><span class="line-num">13</span>      }</div>
+                <div class="code-line"><span class="line-num">14</span>    ]</div>
+                <div class="code-line"><span class="line-num">15</span>  }</div>
+                <div class="code-line"><span class="line-num">16</span>}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       METRICS BANNER
+       ------------------------------------------------------------------------ -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-val">8.13</div>
+          <div class="metric-label">B.Tech CSE CGPA</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">3+</div>
+          <div class="metric-label">Backend Projects Built</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">Elite+Silver</div>
+          <div class="metric-label">NPTEL Java Credential</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100%</div>
+          <div class="metric-label">REST & Security Compliant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       ABOUT SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// ABOUT ME</span>
+        <h2 class="section-title">Backend First Engineering</h2>
+        <p class="section-subtitle">Dedicated to clean architecture, testable code, and high-concurrency database design.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Narrative -->
+        <div class="glass-card about-card">
+          <h3 style="font-size:1.5rem; margin-bottom:1rem;">Building Strong Digital Backbones</h3>
+          <p class="text-muted" style="margin-bottom:1.25rem;">
+            I am a Computer Science graduate and Java Backend Developer passionate about building robust, scalable server-side systems. My core strength lies in designing efficient database schemas, implementing Spring Security with JWT authorization, and writing clean, testable code adhering to SOLID principles.
+          </p>
+          <p class="text-muted" style="margin-bottom:1.5rem;">
+            With hands-on experience developing RESTful APIs for job portals, event hubs, and personal financial management tools, I take complete end-to-end ownership of backend architecture—from domain modeling to integration testing.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:1.5rem; border-top:1px solid var(--border-glass); padding-top:1.25rem;">
+            <div>
+              <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">LOCATION</span>
+              <span style="font-weight:600;">Indore, MP, India</span>
+            </div>
+            <div>
+              <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">DEGREE</span>
+              <span style="font-weight:600;">B.Tech Computer Science</span>
+            </div>
+            <div>
+              <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">EMAIL</span>
+              <span style="font-weight:600;">chhavidubey2224@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Core Engineering Highlights -->
+        <div class="about-highlights-wrap">
+          <div class="about-highlights">
+            
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-cubes"></i></div>
+              <div class="highlight-text">
+                <h4>Clean Architecture & SOLID</h4>
+                <p>Decoupled layered design (Controller, Service, Repository, DTO) for maximum maintainability.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="highlight-text">
+                <h4>Database Optimization</h4>
+                <p>Relational schema modeling in MySQL with indexing and query optimization.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="highlight-text">
+                <h4>Spring Security & JWT</h4>
+                <p>Stateless token authorization, password hashing (BCrypt), and role-based access control.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+              <div class="highlight-text">
+                <h4>Unit Testing & Quality</h4>
+                <p>Writing resilient unit tests with JUnit 5 and verifying API contracts via Postman.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       SKILLS MATRIX SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="skills" class="section" style="background: rgba(17, 23, 38, 0.3);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// TECHNICAL STACK</span>
+        <h2 class="section-title">Core Engineering Skillset</h2>
+        <p class="section-subtitle">Categorized technologies and tools I utilize daily to build production backend applications.</p>
+      </div>
+
+      <div class="skills-grid">
+        
+        <!-- Languages -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-code skill-category-icon"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-brands fa-java text-accent"></i> Java (Core & Adv)</span>
+            <span class="tech-tag"><i class="fa-solid fa-database text-accent"></i> SQL</span>
+            <span class="tech-tag"><i class="fa-solid fa-terminal text-accent"></i> C++</span>
+          </div>
+        </div>
+
+        <!-- Backend Frameworks -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-server skill-category-icon"></i>
+            <h3>Backend Frameworks</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-solid fa-leaf text-accent"></i> Spring Boot</span>
+            <span class="tech-tag"><i class="fa-solid fa-layer-group text-accent"></i> Spring Framework</span>
+            <span class="tech-tag"><i class="fa-solid fa-lock text-accent"></i> Spring Security (JWT)</span>
+            <span class="tech-tag"><i class="fa-solid fa-network-wired text-accent"></i> RESTful APIs</span>
+          </div>
+        </div>
+
+        <!-- ORM & Persistence -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-database skill-category-icon"></i>
+            <h3>Databases & Persistence</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-solid fa-server text-accent"></i> MySQL</span>
+            <span class="tech-tag"><i class="fa-solid fa-link text-accent"></i> Spring Data JPA</span>
+            <span class="tech-tag"><i class="fa-solid fa-diagram-project text-accent"></i> Hibernate ORM</span>
+            <span class="tech-tag"><i class="fa-solid fa-plug text-accent"></i> JDBC</span>
+          </div>
+        </div>
+
+        <!-- Testing & QA -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-vial-circle-check skill-category-icon"></i>
+            <h3>Testing & Validation</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-solid fa-vial text-accent"></i> JUnit 5</span>
+            <span class="tech-tag"><i class="fa-solid fa-check-double text-accent"></i> Unit Testing</span>
+            <span class="tech-tag"><i class="fa-solid fa-paper-plane text-accent"></i> Postman API Testing</span>
+          </div>
+        </div>
+
+        <!-- Tools & IDEs -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-wrench skill-category-icon"></i>
+            <h3>Tools & Ecosystem</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-brands fa-git-alt text-accent"></i> Git</span>
+            <span class="tech-tag"><i class="fa-brands fa-github text-accent"></i> GitHub</span>
+            <span class="tech-tag"><i class="fa-solid fa-laptop-code text-accent"></i> IntelliJ IDEA</span>
+            <span class="tech-tag"><i class="fa-solid fa-code-branch text-accent"></i> Spring Tool Suite</span>
+          </div>
+        </div>
+
+        <!-- Core CS Concepts -->
+        <div class="glass-card">
+          <div class="skill-category-title">
+            <i class="fa-solid fa-brain skill-category-icon"></i>
+            <h3>Core Competencies</h3>
+          </div>
+          <div class="skill-tags-wrapper">
+            <span class="tech-tag"><i class="fa-solid fa-tree text-accent"></i> Data Structures & Algorithms</span>
+            <span class="tech-tag"><i class="fa-solid fa-shapes text-accent"></i> OOP Principles</span>
+            <span class="tech-tag"><i class="fa-solid fa-network-wired text-accent"></i> Computer Networks</span>
+            <span class="tech-tag"><i class="fa-solid fa-table text-accent"></i> DBMS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       PROJECTS SPOTLIGHT SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// FEATURED WORK</span>
+        <h2 class="section-title">Backend Architecture Showcase</h2>
+        <p class="section-subtitle">Real-world applications built with Java, Spring Boot, MySQL, and secure RESTful APIs.</p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: Job Portal -->
+        <div class="project-card">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-dates">Dec 2025 – Mar 2026</span>
+              <span class="project-role">Backend Developer</span>
+            </div>
+
+            <h3 class="project-title">Job Application Portal</h3>
+
+            <ul class="project-bullets">
+              <li>Designed a role-based job management platform enabling administrators to publish postings and job seekers to apply securely.</li>
+              <li>Developed advanced search REST APIs with dynamic filtering parameters (title, location, company) and SQL offset pagination.</li>
+              <li>Integrated Spring Security with stateless JWT authorization to protect sensitive recruiter & applicant endpoints.</li>
+              <li>Owned complete backend architecture design, data transfer objects (DTOs), and custom global exception handling.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Spring Security (JWT)</span>
+              <span class="tech-tag">Spring Data JPA</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Postman</span>
+            </div>
+
+            <div>
+              <a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> View GitHub Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- Architecture Box -->
+          <div class="project-architecture">
+            <div class="arch-header">
+              <i class="fa-solid fa-diagram-project"></i> Architecture Pipeline
+            </div>
+            <div class="arch-flow">
+              <div class="arch-step">
+                <span class="arch-step-num">1</span>
+                <span>JWT Authentication Filter</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">2</span>
+                <span>Role-Based Authorization (RBAC)</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">3</span>
+                <span>Paginated Service Filtering Layer</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">4</span>
+                <span>Spring Data JPA -> MySQL Store</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: College Events Hub -->
+        <div class="project-card">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-dates">Aug 2025 – Dec 2025</span>
+              <span class="project-role">Backend Developer</span>
+            </div>
+
+            <h3 class="project-title">College Events Hub</h3>
+
+            <ul class="project-bullets">
+              <li>Engineered RESTful backend services for campus events, user profiles, and the <em>HackFinder</em> hackathon team matching engine.</li>
+              <li>Modeled normalized MySQL database schemas to handle multi-table relations across users, hackathon listings, and registration logs.</li>
+              <li>Implemented role-based security layers restricting event creation and approval workflows to authorized organizers.</li>
+              <li>Handled end-to-end API testing and Postman integration collections.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Spring Security</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+
+            <div>
+              <a href="https://github.com/CHHAVIDUBEY24/college-events-hub" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> View GitHub Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- Architecture Box -->
+          <div class="project-architecture">
+            <div class="arch-header">
+              <i class="fa-solid fa-diagram-project"></i> Architecture Pipeline
+            </div>
+            <div class="arch-flow">
+              <div class="arch-step">
+                <span class="arch-step-num">1</span>
+                <span>Client REST Request</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">2</span>
+                <span>Event Registration Controller</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">3</span>
+                <span>HackFinder Team Matcher Engine</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">4</span>
+                <span>Transactional MySQL Persistence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Money-Trex -->
+        <div class="project-card">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-dates">Jun 2025 – Aug 2025</span>
+              <span class="project-role">Full Stack Developer</span>
+            </div>
+
+            <h3 class="project-title">Money-Trex (Personal Finance Tracker)</h3>
+
+            <ul class="project-bullets">
+              <li>Built a full-stack personal finance system to track, categorize, and analyze daily income and expenditures.</li>
+              <li>Created a responsive Angular dashboard for visual spending summaries and category-wise budget analytics.</li>
+              <li>Implemented secure Spring Boot backend APIs handling financial transaction data, reporting, and category aggregation.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+
+            <div>
+              <a href="https://github.com/CHHAVIDUBEY24/Money-Trex.git" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> View GitHub Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- Architecture Box -->
+          <div class="project-architecture">
+            <div class="arch-header">
+              <i class="fa-solid fa-diagram-project"></i> Architecture Pipeline
+            </div>
+            <div class="arch-flow">
+              <div class="arch-step">
+                <span class="arch-step-num">1</span>
+                <span>Angular Dashboard UI</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">2</span>
+                <span>Transaction REST Controller</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">3</span>
+                <span>Expense Categorization Analytics</span>
+              </div>
+              <div class="arch-step">
+                <span class="arch-step-num">4</span>
+                <span>MySQL Financial Records</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       INTERACTIVE DEVELOPER TERMINAL SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="terminal" class="section" style="background: rgba(17, 23, 38, 0.3);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// DEV TERMINAL</span>
+        <h2 class="section-title">Interactive Engineering CLI</h2>
+        <p class="section-subtitle">Type commands or click quick suggestions below to inspect my profile directly from a developer shell.</p>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="window-controls">
+            <span class="control-dot red"></span>
+            <span class="control-dot yellow"></span>
+            <span class="control-dot green"></span>
+          </div>
+          <span class="terminal-title">chhavi@backend-dev: ~ (zsh)</span>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+          <div id="terminal-welcome" class="terminal-output">
+            <span class="text-accent">Welcome to Chhavi Dubey's Interactive Terminal v2.6.0</span><br>
+            <span>Type <span class="text-gradient font-bold">'help'</span> to list available commands or click quick actions below.</span>
+          </div>
+
+          <div class="terminal-prompt-line">
+            <span class="prompt-symbol">chhavi@backend-dev:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" placeholder="Type command here (e.g. 'skills', 'projects', 'curl')..." autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+
+        <div class="terminal-suggestions">
+          <span style="font-size:0.78rem; color:var(--text-dim); font-family:var(--font-mono);">Quick Run:</span>
+          <button class="term-btn" data-cmd="help">help</button>
+          <button class="term-btn" data-cmd="about">about</button>
+          <button class="term-btn" data-cmd="skills">skills</button>
+          <button class="term-btn" data-cmd="projects">projects</button>
+          <button class="term-btn" data-cmd="curl /api/v1/profile">curl /api/v1/profile</button>
+          <button class="term-btn" data-cmd="contact">contact</button>
+          <button class="term-btn" data-cmd="clear">clear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       CERTIFICATIONS SECTION
+       ------------------------------------------------------------------------ -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// CREDENTIALS</span>
+        <h2 class="section-title">Certifications & Badges</h2>
+        <p class="section-subtitle">Verified technical certifications from NPTEL & premier academic institutions.</p>
+      </div>
+
+      <div class="certs-grid">
+        
+        <!-- Cert 1 -->
+        <div class="glass-card">
+          <span class="cert-badge"><i class="fa-solid fa-award"></i> Elite + Silver Badge</span>
+          <div class="cert-issuer">IIT Kharagpur (NPTEL)</div>
+          <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Programming in Java</h3>
+          <p class="text-muted" style="font-size:0.9rem; margin-bottom:1.25rem;">
+            Mastered object-oriented programming concepts (inheritance, polymorphism, abstraction), multithreading, exception handling, and core Java APIs.
+          </p>
+          <a href="https://drive.google.com/file/d/16ho7uIIDf8ssyk_0txTZ-tOQs2CzQnuf/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-file-pdf"></i> View Certificate
+          </a>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="glass-card">
+          <span class="cert-badge"><i class="fa-solid fa-code"></i> Algorithm Specialist</span>
+          <div class="cert-issuer">IIT Gandhinagar (NPTEL)</div>
+          <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Competitive Programming</h3>
+          <p class="text-muted" style="font-size:0.9rem; margin-bottom:1.25rem;">
+            Built strong foundation in algorithmic thinking, space-time complexity analysis, sorting, searching, recursion, and greedy strategies.
+          </p>
+          <a href="https://drive.google.com/file/d/1UproYYw-6UzGEfBf_ablQkSi7CaavJof/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-file-pdf"></i> View Certificate
+          </a>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="glass-card">
+          <span class="cert-badge"><i class="fa-solid fa-award"></i> Elite Badge</span>
+          <div class="cert-issuer">IIT Kharagpur (NPTEL)</div>
+          <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Computer Networks & IP</h3>
+          <p class="text-muted" style="font-size:0.9rem; margin-bottom:1.25rem;">
+            Conceptual clarity in OSI & TCP/IP models, HTTP/DNS application protocols, error detection, flow control, and transport layer reliability.
+          </p>
+          <a href="https://drive.google.com/file/d/1vHieUc2kGRzM_MrwIFyV7mc5EsNTVf-f/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-file-pdf"></i> View Certificate
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       EXPERIENCE & EDUCATION TIMELINE
+       ------------------------------------------------------------------------ -->
+  <section id="experience" class="section" style="background: rgba(17, 23, 38, 0.3);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// CAREER JOURNEY</span>
+        <h2 class="section-title">Education & Experience</h2>
+        <p class="section-subtitle">Academic record and intensive hands-on backend development training.</p>
+      </div>
+
+      <div class="timeline">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">July 2025 – August 2025</span>
+            <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">Full Stack Java Development Trainee</h3>
+            <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">Intensive Training Program</span>
+            <ul class="project-bullets" style="margin-bottom:0;">
+              <li>Completed intensive hands-on Java Full Stack training program covering backend (Java, Spring Boot) and frontend integration.</li>
+              <li>Worked with mentors to improve debugging efficiency, clean code practices, and unit testing coverage.</li>
+              <li>Recognized among top peers for exceptional grasp of advanced Java concepts and problem-solving.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">November 2022 – August 2026</span>
+            <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">Bachelor's in Computer Science & Engineering</h3>
+            <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">Acropolis Institute of Technology and Research, Indore</span>
+            <p class="text-muted" style="margin-bottom:0;">
+              <strong>CGPA: 8.01</strong> | Core focus on Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, and Computer Networks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">April 2021 – July 2022</span>
+            <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">Class XII (CBSE Senior Secondary)</h3>
+            <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">S.I.C.A Senior Secondary School, Indore</span>
+            <p class="text-muted" style="margin-bottom:0;">
+              <strong>Grade: 83.4%</strong> | Science Stream.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       CONTACT SECTION & FORMSPREE INTEGRATION
+       ------------------------------------------------------------------------ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// GET IN TOUCH</span>
+        <h2 class="section-title">Let's Build Something Great</h2>
+        <p class="section-subtitle">Interested in hiring me for Java Backend Engineer or Software Developer roles? Send me a message!</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Contact Information Cards -->
+        <div>
+          <div class="glass-card" style="height: 100%;">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem;">Contact Details</h3>
+            <p class="text-muted" style="margin-bottom:1.5rem;">
+              Feel free to reach out via email, phone, or LinkedIn. I respond quickly to inquiries about backend engineering roles and technical collaborations.
+            </p>
+
+            <div class="contact-info-list">
+              
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="text-dim" style="font-size:0.78rem; font-family:var(--font-mono);">EMAIL</span>
+                  <div><a href="mailto:chhavidubey2224@gmail.com" style="color:#fff; text-decoration:none; font-weight:600;">chhavidubey2224@gmail.com</a></div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="text-dim" style="font-size:0.78rem; font-family:var(--font-mono);">PHONE</span>
+                  <div><a href="tel:+919770261260" style="color:#fff; text-decoration:none; font-weight:600;">+91 9770261260</a></div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="text-dim" style="font-size:0.78rem; font-family:var(--font-mono);">LOCATION</span>
+                  <div style="font-weight:600;">Indore, Madhya Pradesh, India</div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div>
+                  <span class="text-dim" style="font-size:0.78rem; font-family:var(--font-mono);">LINKEDIN</span>
+                  <div><a href="https://www.linkedin.com/in/chhavi-dubey24/" target="_blank" rel="noopener" style="color:var(--accent-cyan); text-decoration:none; font-weight:600;">linkedin.com/in/chhavi-dubey24</a></div>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-glass);">
+              <button class="btn btn-outline btn-sm js-copy-email">
+                <i class="fa-regular fa-copy"></i> Copy Email Address
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form (Formspree Endpoint) -->
+        <div>
+          <div class="glass-card">
+            <h3 style="font-size:1.4rem; margin-bottom:0.4rem;">Send a Direct Message</h3>
+            <p class="text-muted" style="font-size:0.9rem; margin-bottom:1.5rem;">I will reply within 24 hours.</p>
+
+            <form action="https://formspree.io/f/mjgjgnve" method="POST">
+              
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                <div class="form-group">
+                  <label class="form-label">Your Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Subject</label>
+                <input type="text" name="subject" class="form-control" placeholder="Backend Internship / Software Engineering Role" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-control" rows="5" placeholder="Hi Chhavi, we would like to invite you for an interview..." required></textarea>
+              </div>
+
+              <input type="hidden" name="_replyto" value="chhavidubey2224@gmail.com">
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message for Chhavi Dubey">
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------------------------ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/CHHAVIDUBEY24" target="_blank" rel="noopener" class="btn btn-outline btn-icon" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chhavi-dubey24/" target="_blank" rel="noopener" class="btn btn-outline btn-icon" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/thechhavidubey/" target="_blank" rel="noopener" class="btn btn-outline btn-icon" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+
+      <p class="text-muted" style="font-size:0.9rem;">
+        Designed & Built by <strong style="color:#fff;">Chhavi Dubey</strong> • Java Backend Engineer
+      </p>
+      <p class="text-dim" style="font-size:0.8rem; margin-top:0.3rem;">
+        © 2026 Chhavi Dubey. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/terminal.js"></script>
+</body>
+</html>
