@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chhavi Dubey - Resume</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.38;
+      color: #111827;
+      background: #f9fafb;
+      padding: 20px;
+    }
+    .action-bar {
+      max-width: 820px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111827;
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+    .action-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.2s;
+    }
+    .action-bar a.btn-dl {
+      background: #10b981;
+      color: #000;
+      font-weight: 700;
+    }
+    .action-bar a:hover {
+      opacity: 0.9;
+    }
+    .resume-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 45px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+    }
+    a {
+      color: #0000ee;
+      text-decoration: underline;
+    }
+    .header {
+      margin-bottom: 12px;
+    }
+    .name {
+      font-size: 18pt;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .contact-grid {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5pt;
+    }
+    .contact-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .section-title {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 14px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 2px;
+    }
+    p.objective {
+      font-size: 9.5pt;
+      line-height: 1.4;
+      text-align: justify;
+      color: #222;
+      margin-bottom: 6px;
+    }
+    .entry {
+      margin-bottom: 8px;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.5pt;
+    }
+    .institution {
+      font-weight: 700;
+      color: #111;
+    }
+    .location {
+      font-style: italic;
+      color: #333;
+    }
+    .degree-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.3pt;
+      margin-top: 1px;
+    }
+    .degree {
+      color: #222;
+    }
+    .date-str {
+      font-style: italic;
+      color: #333;
+    }
+    .skills-list {
+      list-style: none;
+      font-size: 9.4pt;
+      line-height: 1.45;
+    }
+    .skills-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 2px;
+    }
+    .skills-list li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      font-size: 8pt;
+      color: #111;
+    }
+    .skills-list strong {
+      font-weight: 700;
+      color: #111;
+    }
+    .bullet-list {
+      list-style: none;
+      margin-top: 2px;
+      font-size: 9.3pt;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 3px;
+      line-height: 1.35;
+      text-align: justify;
+    }
+    .bullet-list li::before {
+      content: "○";
+      position: absolute;
+      left: 2px;
+      font-size: 8pt;
+      color: #111;
+    }
+    .project-link {
+      font-weight: 700;
+      font-size: 8.8pt;
+      text-decoration: underline;
+      color: #0000ee;
+      display: inline-block;
+      margin-top: 1px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .action-bar {
+        display: none;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="index.html">← Back to Portfolio</a>
+    <a href="Chhavi_Dubey_Resume.pdf?v=3.0" class="btn-dl" target="_blank">⬇ Download Official PDF</a>
+  </div>
+
+  <div class="resume-container">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="name">Chhavi Dubey</div>
+      <div class="contact-grid">
+        <div class="contact-col">
+          <div>GitHub: <a href="https://github.com/CHHAVIDUBEY24" target="_blank">CHHAVIDUBEY24</a></div>
+          <div>LinkedIn: <a href="https://www.linkedin.com/in/chhavi-dubey24/" target="_blank">chhavi-dubey24</a></div>
+        </div>
+        <div class="contact-col" style="text-align: right;">
+          <div>Email: <a href="mailto:chhavidubey2224@gmail.com">chhavidubey2224@gmail.com</a></div>
+          <div>Mobile: +91 9770261260</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAREER OBJECTIVE -->
+    <div class="section-title">CAREER OBJECTIVE</div>
+    <p class="objective">
+      Software Engineer with hands-on experience developing backend applications using Java, Spring Boot, Spring Security, JPA/Hibernate, REST APIs, and MySQL. Strong foundation in Data Structures &amp; Algorithms, OOP, DBMS, and backend system development, with experience owning features from API design to database integration.
+    </p>
+
+    <!-- EDUCATION -->
+    <div class="section-title">EDUCATION</div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">Acropolis Institute of Technology and Research</span>
+        <span class="location">Indore, India</span>
+      </div>
+      <div class="degree-row">
+        <span class="degree">B.Tech. in Computer Science &amp; Engineering | <strong>CGPA: 8.13/10</strong></span>
+        <span class="date-str">November 2022 - June 2026</span>
+      </div>
+    </div>
+    <div class="entry" style="margin-bottom: 2px;">
+      <div class="entry-header">
+        <span class="institution">S.I.C.A Senior Secondary School</span>
+        <span class="location">Indore, India</span>
+      </div>
+      <div class="degree-row">
+        <span class="degree">Class XII (CBSE) | <strong>83.4%</strong></span>
+        <span class="date-str">April 2021 - July 2022</span>
+      </div>
+    </div>
+
+    <!-- SKILLS SUMMARY -->
+    <div class="section-title">SKILLS SUMMARY</div>
+    <ul class="skills-list">
+      <li><strong>Programming Languages:</strong> Java, SQL, C++</li>
+      <li><strong>Backend Technologies:</strong> Spring Boot, Spring Framework, Spring Security, Hibernate, JPA, JDBC, REST APIs</li>
+      <li><strong>Database:</strong> MySQL</li>
+      <li><strong>Testing:</strong> JUnit 5, Unit Testing</li>
+      <li><strong>Developer Tools:</strong> Git, GitHub, IntelliJ IDEA, Eclipse, Spring Tool Suite, VS Code, Postman, Maven</li>
+      <li><strong>Core CS:</strong> Data Structures &amp; Algorithms, OOP, DBMS</li>
+    </ul>
+
+    <!-- TRAINING -->
+    <div class="section-title">TRAINING</div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">FULL STACK JAVA DEVELOPMENT | TRAINEE</span>
+        <span class="date-str">July 2025 – August 2025</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Completed an intensive, hands-on Java Full Stack training program, covering backend (Java, Spring) and front-end integration.</li>
+        <li>Worked with mentors to improve debugging efficiency and code quality.</li>
+      </ul>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-title">PROJECTS</div>
+    
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">Job Portal | Backend Developer</span>
+        <span class="date-str">August 2025 – December 2025</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Developed RESTful APIs using Java and Spring Boot for job, company, user, and application management.</li>
+        <li>Implemented JWT-based authentication and role-based authorization using Spring Security.</li>
+        <li>Designed relational database entities and relationships using Spring Data JPA/Hibernate with MySQL.</li>
+        <li>Built searchable and paginated job APIs supporting filtering by title, location, and company.</li>
+        <li>Implemented request validation and centralized exception handling to improve API reliability.</li>
+        <li>Tested REST endpoints and authentication flows using Postman. &nbsp;<a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" class="project-link">LINK</a></li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">Events Hub | Backend Developer</span>
+        <span class="date-str">August 2025 – November 2025</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Developed REST APIs for event management, user profiles, and HackFinder team posts using Spring Boot.</li>
+        <li>Designed MySQL database schemas for users, roles, events, and HackFinder listings using JPA/Hibernate.</li>
+        <li>Implemented role-based authorization to restrict event and post management operations based on user roles.</li>
+        <li>Developed CRUD operations and API integrations while maintaining data consistency across related entities.</li>
+        <li>Collaborated on backend architecture and independently delivered assigned modules end-to-end.</li>
+      </ul>
+      <div style="padding-left: 16px; margin-top: 1px;">
+        <a href="https://github.com/CHHAVIDUBEY24/college-events-hub" target="_blank" class="project-link">LINK</a>
+      </div>
+    </div>
+
+    <!-- CERTIFICATES -->
+    <div class="section-title">CERTIFICATES</div>
+    
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">Programming in Java — NPTEL, IIT Kharagpur | Elite + Silver | <a href="https://drive.google.com/file/d/16ho7uIIDf8ssyk_0txTZ-tOQs2CzQnuf/view?usp=drive_link" target="_blank">CERTIFICATE</a></span>
+        <span class="date-str">July 2025 – October 2025</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Developed strong proficiency in object-oriented programming (OOP) concepts including inheritance, polymorphism, interfaces, and abstraction.</li>
+        <li>Gained hands-on experience with exception handling, multithreading, and core Java APIs, strengthening problem-solving and application design skills.</li>
+        <li>Achieved an Elite + Silver Badge, reflecting high performance and strong conceptual understanding.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="institution">Getting Started with Competitive Programming — NPTEL | <a href="https://drive.google.com/file/d/1UproYYw-6UzGEfBf_ablQkSi7CaavJof/view?usp=drive_link" target="_blank">CERTIFICATE</a></span>
+        <span class="date-str">July 2024 – October 2024</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Built foundational skills in competitive programming and algorithmic problem solving.</li>
+        <li>Practiced basic data structures, logical thinking, and time–space complexity analysis through problem-based learning.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
