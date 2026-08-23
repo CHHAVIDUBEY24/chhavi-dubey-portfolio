@@ -1,20 +1,77 @@
 /* ==========================================================================
-   MAIN JS INTERACTIVITY - CHHAVI DUBEY PORTFOLIO
+   ADVANCED INTERACTIVITY & ANIMATIONS - CHHAVI DUBEY PORTFOLIO
+   Custom Cursor, 3D Card Tilt, Audio Synth, Dynamic Typing & Scrollspy
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* --------------------------------------------------------------------------
-     1. HERO TYPING ANIMATION
+     1. CUSTOM GLOWING CURSOR FOLLOWER (DESKTOP)
+     -------------------------------------------------------------------------- */
+  const cursor = document.querySelector('.custom-cursor');
+  const follower = document.querySelector('.custom-cursor-follower');
+
+  if (cursor && follower && window.innerWidth > 992) {
+    let mouseX = -100, mouseY = -100;
+    let followerX = -100, followerY = -100;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    });
+
+    function animateFollower() {
+      followerX += (mouseX - followerX) * 0.15;
+      followerY += (mouseY - followerY) * 0.15;
+      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+      requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    // Hover interactive elements
+    const interactiveEls = document.querySelectorAll('a, button, input, select, textarea, .glass-card, .term-btn, .tech-tag');
+    interactiveEls.forEach(el => {
+      el.addEventListener('mouseenter', () => follower.classList.add('active'));
+      el.addEventListener('mouseleave', () => follower.classList.remove('active'));
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     2. 3D CARD TILT EFFECT (MOUSEMOVE)
+     -------------------------------------------------------------------------- */
+  const tiltCards = document.querySelectorAll('.tilt-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     3. HERO DYNAMIC TYPING ANIMATION
      -------------------------------------------------------------------------- */
   const typingElement = document.getElementById('hero-typing');
   const phrases = [
     "Java Backend Developer",
     "Spring Boot & REST API Architect",
     "MySQL Database Specialist",
+    "Kriyeta 4.0 & Prayatna 2.0 Hackathon Competitor",
     "DSA & Problem Solving Enthusiast"
   ];
-  
+
   let phraseIdx = 0;
   let charIdx = 0;
   let isDeleting = false;
@@ -28,20 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isDeleting) {
       typingElement.textContent = currentPhrase.substring(0, charIdx - 1);
       charIdx--;
-      typingSpeed = 50;
+      typingSpeed = 45;
     } else {
       typingElement.textContent = currentPhrase.substring(0, charIdx + 1);
       charIdx++;
-      typingSpeed = 120;
+      typingSpeed = 95;
     }
 
     if (!isDeleting && charIdx === currentPhrase.length) {
-      typingSpeed = 2000; // Pause at end of phrase
+      typingSpeed = 2200;
       isDeleting = true;
     } else if (isDeleting && charIdx === 0) {
       isDeleting = false;
       phraseIdx = (phraseIdx + 1) % phrases.length;
-      typingSpeed = 500;
+      typingSpeed = 400;
     }
 
     setTimeout(typeEffect, typingSpeed);
@@ -50,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   typeEffect();
 
   /* --------------------------------------------------------------------------
-     2. CODE VISUALIZER TAB SWITCHER (JAVA VS JSON)
+     4. CODE VISUALIZER TAB SWITCHER (HERO)
      -------------------------------------------------------------------------- */
   const tabJava = document.getElementById('tab-java');
   const tabJson = document.getElementById('tab-json');
@@ -63,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tabJson.classList.remove('active');
       codeJava.style.display = 'block';
       codeJson.style.display = 'none';
+      playAudio(520, 'sine', 0.05);
     });
 
     tabJson.addEventListener('click', () => {
@@ -70,28 +128,74 @@ document.addEventListener('DOMContentLoaded', () => {
       tabJava.classList.remove('active');
       codeJson.style.display = 'block';
       codeJava.style.display = 'none';
+      playAudio(660, 'sine', 0.05);
     });
   }
 
   /* --------------------------------------------------------------------------
-     3. NAVBAR SCROLLSPY & SCROLLED STYLE
+     5. SOUND EFFECTS SYNTHESIZER (WEB AUDIO API)
+     -------------------------------------------------------------------------- */
+  let soundEnabled = false;
+  let audioCtx = null;
+  const soundBtn = document.getElementById('sound-toggle-btn');
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  function playAudio(freq = 440, type = 'sine', duration = 0.08) {
+    if (!soundEnabled || !audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (e) {}
+  }
+
+  if (soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      initAudio();
+      const icon = soundBtn.querySelector('i');
+      if (soundEnabled) {
+        soundBtn.classList.add('active');
+        if (icon) icon.className = 'fa-solid fa-volume-high';
+        playAudio(880, 'triangle', 0.12);
+        showToast('Sound effects enabled!');
+      } else {
+        soundBtn.classList.remove('active');
+        if (icon) icon.className = 'fa-solid fa-volume-xmark';
+        showToast('Sound effects muted');
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     6. NAVBAR SCROLLSPY & SCROLLED STYLE
      -------------------------------------------------------------------------- */
   const navbar = document.querySelector('.navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
   function handleScroll() {
-    // Add scrolled shadow to navbar
     if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Scrollspy active link detection
     let currentSec = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       const sectionHeight = section.offsetHeight;
       if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
         currentSec = section.getAttribute('id');
@@ -107,50 +211,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial trigger
+  handleScroll();
 
   /* --------------------------------------------------------------------------
-     4. MOBILE MENU TOGGLE
+     7. MOBILE DRAWER NAVIGATION
      -------------------------------------------------------------------------- */
   const mobileToggle = document.getElementById('mobile-toggle');
-  const navMenu = document.getElementById('nav-menu');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  const mobileCloseBtn = document.getElementById('mobile-close-btn');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-      }
-    });
-
-    // Close menu when link clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-xmark');
-        }
-      });
-    });
+  function openDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.add('active');
+    if (mobileOverlay) mobileOverlay.classList.add('active');
   }
 
+  function closeDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.remove('active');
+    if (mobileOverlay) mobileOverlay.classList.remove('active');
+  }
+
+  if (mobileToggle) mobileToggle.addEventListener('click', openDrawer);
+  if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeDrawer);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeDrawer);
+  mobileLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
   /* --------------------------------------------------------------------------
-     5. TOAST NOTIFICATION & COPY EMAIL TO CLIPBOARD
+     8. TOAST NOTIFICATION SYSTEM & COPY EMAIL
      -------------------------------------------------------------------------- */
   const copyButtons = document.querySelectorAll('.js-copy-email');
   const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-msg');
   const emailVal = 'chhavidubey2224@gmail.com';
 
   function showToast(message) {
     if (!toast) return;
-    const toastMsg = toast.querySelector('.toast-msg');
     if (toastMsg) toastMsg.textContent = message;
 
     toast.classList.add('show');
+    playAudio(750, 'sine', 0.1);
     setTimeout(() => {
       toast.classList.remove('show');
     }, 3200);

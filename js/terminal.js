@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const COMMANDS = {
     help: `
 <span class="text-accent">Available Terminal Commands:</span>
-  <span class="text-gradient font-bold">about</span>       - Brief overview of background and career objective
-  <span class="text-gradient font-bold">skills</span>      - List key programming languages, frameworks, and tools
-  <span class="text-gradient font-bold">projects</span>    - View featured Java Spring Boot backend projects
-  <span class="text-gradient font-bold">resume</span>      - Direct link to view and download Resume (PDF)
-  <span class="text-gradient font-bold">curl</span>        - Execute endpoint requests (e.g., <span class="text-accent">curl /api/v1/profile</span>)
-  <span class="text-gradient font-bold">contact</span>     - View direct contact information and social profiles
+  <span class="text-gradient font-bold">about</span>       - Brief overview of engineering background & objective
+  <span class="text-gradient font-bold">skills</span>      - List key programming languages, frameworks, & tools
+  <span class="text-gradient font-bold">projects</span>    - View featured Java Spring Boot backend systems
+  <span class="text-gradient font-bold">awards</span>      - Hackathons, National Competitions & Honors (Kriyeta 4.0, Prayatna 2.0)
+  <span class="text-gradient font-bold">resume</span>      - Direct link to view and download official Resume (PDF)
+  <span class="text-gradient font-bold">curl</span>        - Execute live endpoint requests (e.g. <span class="text-accent">curl /api/v1/profile</span>)
+  <span class="text-gradient font-bold">contact</span>     - View direct contact details & social profiles
   <span class="text-gradient font-bold">clear</span>       - Clear terminal screen output
   <span class="text-gradient font-bold">date</span>        - Display current system time
 `,
@@ -39,7 +40,7 @@ Objective   : Software Engineer with hands-on experience developing backend appl
 │ ORM & Persistence   │ Hibernate, JPA, JDBC, RESTful APIs                     │
 │ Database            │ MySQL (Relational Schema Design & Indexing)            │
 │ Testing             │ JUnit 5, Unit Testing                                  │
-│ Tools & IDEs        │ Git, GitHub, IntelliJ IDEA, Eclipse, Maven, Postman   │
+│ Developer Tools     │ Git, GitHub, IntelliJ IDEA, Eclipse, Maven, Postman   │
 │ Core Competencies   │ DSA, OOP Principles, REST Architecture, DBMS           │
 └─────────────────────┴────────────────────────────────────────────────────────┘
 `,
@@ -57,9 +58,27 @@ Objective   : Software Engineer with hands-on experience developing backend appl
    - Income/expense categorization analytics & transaction tracking APIs.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/Money-Trex.git" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/Money-Trex.git</a>
 `,
+    awards: `
+<span class="text-accent">[HACKATHONS, HONORS & AWARDS]</span>
+🏆 <span class="text-gradient font-bold">Kriyeta 4.0</span> (April 18-20, 2025)
+   - Competed in 48-hour national-level hackathon at Acropolis Institute of Technology and Research (AITR), Indore.
+
+⚡ <span class="text-gradient font-bold">Prayatna 2.0</span> (March 2025)
+   - Participated in 36-hour national-level hackathon held at AITR.
+
+🥇 <span class="text-gradient font-bold">1st Place Winner - World Entrepreneurship Day</span> (August 2023)
+   - Secured 1st place in Poster Making Competition on World Entrepreneurship Day hosted by AITR.
+
+🎖️ <span class="text-gradient font-bold">4th Place - Inter Department Art & Craft Competition</span> (2023)
+   - Secured 4th place representing Computer Science & Engineering department.
+
+🥈 <span class="text-gradient font-bold">Elite + Silver Badge - Programming in Java</span> (NPTEL, IIT Kharagpur)
+`,
+    hackathons: function () { return COMMANDS.awards; },
     resume: `
-<span class="text-accent">[RESUME DOWNLOAD]</span>
-Direct PDF Link: <a href="Chhavi_Dubey_Resume.pdf" target="_blank" style="color:#06b6d4; text-decoration:underline;">Chhavi_Dubey_Resume.pdf</a>
+<span class="text-accent">[OFFICIAL RESUME DOWNLOAD]</span>
+Direct PDF Link: <a href="Chhavi_Dubey_Resume.pdf?v=3.0" target="_blank" style="color:#06b6d4; text-decoration:underline;">Chhavi_Dubey_Resume.pdf</a>
+Web Resume Page: <a href="resume.html" target="_blank" style="color:#06b6d4; text-decoration:underline;">resume.html</a>
 `,
     contact: `
 <span class="text-accent">[DIRECT CONTACT DETAILS]</span>
@@ -67,7 +86,6 @@ Email    : chhavidubey2224@gmail.com
 Phone    : +91 9770261260
 LinkedIn : linkedin.com/in/chhavi-dubey24/
 GitHub   : github.com/CHHAVIDUBEY24
-Resume   : Chhavi_Dubey_Resume.pdf
 Location : Indore, Madhya Pradesh, India
 `,
     date: () => `Current Date & Time: ${new Date().toString()}`
@@ -77,7 +95,6 @@ Location : Indore, Madhya Pradesh, India
     const rawCmd = cmdStr.trim();
     if (!rawCmd) return;
 
-    // Create prompt output line
     const outputDiv = document.createElement('div');
     outputDiv.className = 'terminal-output';
     outputDiv.innerHTML = `<div class="terminal-prompt-line" style="margin-bottom:0.4rem;">
@@ -88,7 +105,6 @@ Location : Indore, Madhya Pradesh, India
     const lowerCmd = rawCmd.toLowerCase();
 
     if (lowerCmd === 'clear') {
-      // Clear terminal body except initial banner
       const banner = document.getElementById('terminal-welcome');
       terminalBody.innerHTML = '';
       if (banner) terminalBody.appendChild(banner);
@@ -109,9 +125,10 @@ Location : Indore, Madhya Pradesh, India
   <span class="string-lit">"developer"</span>: {
     <span class="string-lit">"name"</span>: <span class="string-lit">"Chhavi Dubey"</span>,
     <span class="string-lit">"title"</span>: <span class="string-lit">"Java Backend Developer"</span>,
-    <span class="string-lit">"primaryStack"</span>: [<span class="string-lit">"Java"</span>, <span class="string-lit">"Spring Boot"</span>, <span class="string-lit">"MySQL"</span>, <span class="string-lit">"JUnit 5"</span>],
-    <span class="string-lit">"openToWork"</span>: <span class="keyword">true</span>,
-    <span class="string-lit">"nptelCertification"</span>: <span class="string-lit">"Elite + Silver Badge (Java)"</span>
+    <span class="string-lit">"cgpa"</span>: <span class="string-lit">"8.13/10"</span>,
+    <span class="string-lit">"primaryStack"</span>: [<span class="string-lit">"Java 17+"</span>, <span class="string-lit">"Spring Boot"</span>, <span class="string-lit">"MySQL"</span>, <span class="string-lit">"JWT"</span>, <span class="string-lit">"Maven"</span>],
+    <span class="string-lit">"hackathons"</span>: [<span class="string-lit">"Kriyeta 4.0 (48h)"</span>, <span class="string-lit">"Prayatna 2.0 (36h)"</span>],
+    <span class="string-lit">"openToWork"</span>: <span class="keyword">true</span>
   }
 }`;
       } else {
