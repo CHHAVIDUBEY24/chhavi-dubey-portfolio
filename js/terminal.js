@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="text-gradient font-bold">about</span>       - Brief overview of background and career objective
   <span class="text-gradient font-bold">skills</span>      - List key programming languages, frameworks, and tools
   <span class="text-gradient font-bold">projects</span>    - View featured Java Spring Boot backend projects
+  <span class="text-gradient font-bold">resume</span>      - Direct link to view and download Resume (PDF)
   <span class="text-gradient font-bold">curl</span>        - Execute endpoint requests (e.g., <span class="text-accent">curl /api/v1/profile</span>)
   <span class="text-gradient font-bold">contact</span>     - View direct contact information and social profiles
   <span class="text-gradient font-bold">clear</span>       - Clear terminal screen output
@@ -23,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     about: `
 <span class="text-accent">[PROFILE OVERVIEW]</span>
 Name        : Chhavi Dubey
-Role        : Java Backend Developer & Computer Science Engineer
+Role        : Software Engineer | Java Backend Developer
 Location    : Indore, MP, India
-Education   : B.Tech CSE @ Acropolis Institute (CGPA: 8.01)
-Objective   : Aspiring Backend Engineer with strong proficiency in Java, Spring Boot, MySQL, and DSA. Dedicated to building scalable, clean, and secure RESTful APIs.
+Education   : B.Tech CSE @ Acropolis Institute (CGPA: 8.13/10 | Nov 2022 - June 2026)
+Objective   : Software Engineer with hands-on experience developing backend applications using Java, Spring Boot, Spring Security, JPA/Hibernate, REST APIs, and MySQL. Strong foundation in DSA, OOP, DBMS, and backend system development.
 `,
     skills: `
 <span class="text-accent">[TECHNICAL SKILLSET MATRIX]</span>
@@ -34,27 +35,31 @@ Objective   : Aspiring Backend Engineer with strong proficiency in Java, Spring 
 │ Category            │ Technologies & Tools                                   │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ Languages           │ Java (Core/Adv), SQL, C++                              │
-│ Backend Frameworks  │ Spring Boot, Spring Security (JWT), Spring Data JPA    │
-│ ORM & Persistence   │ Hibernate, JDBC, JPA                                   │
+│ Backend Frameworks  │ Spring Boot, Spring Framework, Spring Security (JWT)   │
+│ ORM & Persistence   │ Hibernate, JPA, JDBC, RESTful APIs                     │
 │ Database            │ MySQL (Relational Schema Design & Indexing)            │
-│ Testing             │ JUnit 5, Unit Testing, Integration Testing             │
-│ Tools & IDEs        │ Git, GitHub, IntelliJ IDEA, Eclipse, Postman           │
-│ Core Competencies   │ DSA, OOP Principles, REST Architecture, System Design  │
+│ Testing             │ JUnit 5, Unit Testing                                  │
+│ Tools & IDEs        │ Git, GitHub, IntelliJ IDEA, Eclipse, Maven, Postman   │
+│ Core Competencies   │ DSA, OOP Principles, REST Architecture, DBMS           │
 └─────────────────────┴────────────────────────────────────────────────────────┘
 `,
     projects: `
 <span class="text-accent">[FEATURED PROJECTS]</span>
-1. <span class="text-gradient font-bold">Job Application Portal</span> | Spring Boot, Spring Security (JWT), MySQL
-   - Role-based job management, paginated search APIs, JWT token security.
+1. <span class="text-gradient font-bold">Job Application Portal</span> (Aug 2025 – Dec 2025) | Spring Boot, JWT, MySQL
+   - Role-based job management, paginated search APIs, JWT token security, centralized exception handling.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/job-application-portal</a>
 
-2. <span class="text-gradient font-bold">College Events Hub</span> | Spring Boot, Spring Security, MySQL
-   - RESTful APIs for events, profiles, and HackFinder team matching engine.
+2. <span class="text-gradient font-bold">Events Hub</span> (Aug 2025 – Nov 2025) | Spring Boot, Spring Security, MySQL
+   - RESTful APIs for events, profiles, and HackFinder team matching engine with JPA/Hibernate.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/college-events-hub" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/college-events-hub</a>
 
 3. <span class="text-gradient font-bold">Money-Trex (Personal Finance Tracker)</span> | Angular, Spring Boot, MySQL
    - Income/expense categorization analytics & transaction tracking APIs.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/Money-Trex.git" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/Money-Trex.git</a>
+`,
+    resume: `
+<span class="text-accent">[RESUME DOWNLOAD]</span>
+Direct PDF Link: <a href="Chhavi_Dubey_Resume.pdf" target="_blank" style="color:#06b6d4; text-decoration:underline;">Chhavi_Dubey_Resume.pdf</a>
 `,
     contact: `
 <span class="text-accent">[DIRECT CONTACT DETAILS]</span>
@@ -62,6 +67,7 @@ Email    : chhavidubey2224@gmail.com
 Phone    : +91 9770261260
 LinkedIn : linkedin.com/in/chhavi-dubey24/
 GitHub   : github.com/CHHAVIDUBEY24
+Resume   : Chhavi_Dubey_Resume.pdf
 Location : Indore, Madhya Pradesh, India
 `,
     date: () => `Current Date & Time: ${new Date().toString()}`
