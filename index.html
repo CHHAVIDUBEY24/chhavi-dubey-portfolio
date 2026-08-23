@@ -54,7 +54,6 @@
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#simulator" class="nav-link">API Simulator</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#awards" class="nav-link">Hackathons &amp; Awards</a></li>
@@ -65,9 +64,6 @@
         </ul>
 
         <div class="nav-actions">
-          <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sound Effects">
-            <i class="fa-solid fa-volume-xmark"></i>
-          </button>
           <a href="resume.html" class="btn btn-outline btn-sm">
             <i class="fa-solid fa-file-lines"></i> View Resume
           </a>
@@ -92,7 +88,6 @@
     <ul class="mobile-nav-links">
       <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
       <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About Me</a></li>
-      <li><a href="#simulator"><i class="fa-solid fa-bolt"></i> API Simulator</a></li>
       <li><a href="#projects"><i class="fa-solid fa-cubes-stacked"></i> Projects</a></li>
       <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
       <li><a href="#awards"><i class="fa-solid fa-trophy"></i> Hackathons &amp; Awards</a></li>
@@ -138,8 +133,8 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="#simulator" class="btn btn-primary">
-                <i class="fa-solid fa-play"></i> Live API Simulator
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-cubes"></i> View Projects
               </a>
               <a href="#projects" class="btn btn-secondary">
                 <i class="fa-solid fa-cubes"></i> View Projects
@@ -165,7 +160,7 @@
 
           <!-- Right Hero Code Visualizer Card -->
           <div class="hero-visualizer">
-            <div class="code-window tilt-card">
+            <div class="code-window">
               <div class="code-header">
                 <div class="window-controls">
                   <span class="control-dot red"></span>
@@ -230,19 +225,19 @@
     <section class="metrics-section">
       <div class="container">
         <div class="metrics-grid">
-          <div class="metric-card glass-card tilt-card">
+          <div class="metric-card glass-card">
             <div class="metric-val">8.13</div>
             <div class="metric-label">B.Tech CSE CGPA</div>
           </div>
-          <div class="metric-card glass-card tilt-card">
+          <div class="metric-card glass-card">
             <div class="metric-val">2</div>
             <div class="metric-label">National Hackathons</div>
           </div>
-          <div class="metric-card glass-card tilt-card">
+          <div class="metric-card glass-card">
             <div class="metric-val">Elite+Silver</div>
             <div class="metric-label">NPTEL Java Credential</div>
           </div>
-          <div class="metric-card glass-card tilt-card">
+          <div class="metric-card glass-card">
             <div class="metric-val">100%</div>
             <div class="metric-label">REST &amp; Security Compliant</div>
           </div>
@@ -251,89 +246,39 @@
     </section>
 
     <!-- =========================================================================
-         3. LIVE SPRING BOOT REST API SIMULATOR
-         ========================================================================= -->
-    <section id="simulator" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag"><i class="fa-solid fa-bolt"></i> INTERACTIVE SANDBOX</span>
-          <h2 class="section-title">Live Spring Boot API Playground</h2>
-          <p class="section-subtitle">Select an API endpoint and simulate live HTTP requests to test backend contracts, response payloads, and latency metrics in real-time.</p>
-        </div>
-
-        <div class="simulator-window tilt-card">
-          <!-- Control Bar -->
-          <div class="simulator-controls-bar">
-            <div class="api-endpoint-picker">
-              <span class="api-method-badge get" id="api-method-badge">GET</span>
-              <select id="api-endpoint-select" class="api-select">
-                <option value="job-search">GET /api/v1/jobs/search (Paginated Query)</option>
-                <option value="jwt-auth">POST /api/v1/auth/authenticate (JWT Security Token)</option>
-                <option value="hackfinder">GET /api/v1/events/hackfinder/match (Hackathon Matcher)</option>
-                <option value="health-check">GET /api/v1/actuator/health (Spring Health Metric)</option>
-              </select>
-            </div>
-            
-            <div class="api-url-display" id="api-url-display">/api/v1/jobs/search?query=Java+Backend&amp;page=0</div>
-            
-            <button id="api-run-btn" class="btn btn-primary btn-sm">
-              <i class="fa-solid fa-bolt"></i> Send Request
-            </button>
-          </div>
-
-          <!-- Request Body (Only shown for POST endpoints) -->
-          <div id="api-request-wrap" style="display:none; padding:1rem 1.5rem; background:#0b1120; border-bottom:1px solid var(--border-glass);">
-            <span style="font-size:0.78rem; font-family:var(--font-mono); color:var(--text-muted); display:block; margin-bottom:0.4rem;">// HTTP Request Payload (application/json):</span>
-            <pre id="api-request-body" style="font-family:var(--font-mono); font-size:0.84rem; color:#a78bfa; margin:0;"></pre>
-          </div>
-
-          <!-- Response Pane -->
-          <div class="simulator-response-pane">
-            <div class="simulator-meta-bar">
-              <span class="status-tag status-200" id="api-status-badge">200 OK</span>
-              <span class="latency-tag" id="api-latency-badge"><i class="fa-regular fa-clock"></i> 24ms</span>
-              <span style="font-size:0.8rem; color:var(--text-dim); margin-left:auto;">Content-Type: application/json</span>
-            </div>
-            <pre id="api-response-body"></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
          4. ABOUT ME SECTION
          ========================================================================= -->
-    <section id="about" class="section" style="background: rgba(12, 18, 32, 0.4);">
+    <section id="about" class="section about-section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">// ABOUT ME</span>
-          <h2 class="section-title">Backend-First Engineering Mindset</h2>
-          <p class="section-subtitle">Dedicated to clean architecture, testable code, and high-concurrency database design.</p>
+          <h2 class="section-title">Software Engineer Focused on Reliable Backends</h2>
+          <p class="section-subtitle">Building maintainable applications with clear architecture, secure APIs, and dependable data systems.</p>
         </div>
 
         <div class="about-grid">
           <!-- Left: Narrative -->
-          <div class="glass-card about-card tilt-card">
-            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Building High-Availability Backends</h3>
-            <p class="text-muted" style="margin-bottom:1.25rem;">
-              I am a Software Engineer with hands-on experience developing backend applications using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Spring Security</strong>, <strong>JPA/Hibernate</strong>, <strong>REST APIs</strong>, and <strong>MySQL</strong>. Strong foundation in Data Structures &amp; Algorithms, OOP, DBMS, and backend system development, with experience owning features from API design to database integration.
+          <div class="glass-card about-card">
+            <h3 class="about-card-title">Building Reliable Backend Applications</h3>
+            <p class="text-muted about-copy">
+              I am a <strong>Software Engineer</strong> with hands-on experience developing backend applications using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Spring Security</strong>, <strong>JPA/Hibernate</strong>, <strong>REST APIs</strong>, and <strong>MySQL</strong>. I have a strong foundation in <strong>Data Structures &amp; Algorithms</strong>, <strong>OOP</strong>, and <strong>DBMS</strong>, with experience owning features from API design through database integration.
             </p>
-            <p class="text-muted" style="margin-bottom:1.5rem;">
-              A passionate competitor in national hackathons (Kriyeta 4.0, Prayatna 2.0), I thrive in collaborative engineering environments solving real-world domain challenges with clean, robust code.
+            <p class="text-muted about-copy about-copy-last">
+              I enjoy collaborative engineering environments and solving real-world challenges with <strong>clean, robust code</strong>. I have also competed in the national <strong>Kriyeta 4.0</strong> and <strong>Prayatna 2.0</strong> hackathons.
             </p>
 
-            <div style="display:flex; flex-wrap:wrap; gap:1.5rem; border-top:1px solid var(--border-glass); padding-top:1.25rem;">
-              <div>
-                <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">LOCATION</span>
-                <span style="font-weight:600;">Indore, MP, India</span>
+            <div class="about-facts">
+              <div class="about-fact">
+                <span class="about-fact-label">LOCATION</span>
+                <strong>Indore, MP, India</strong>
               </div>
-              <div>
-                <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">DEGREE &amp; CGPA</span>
-                <span style="font-weight:600;">B.Tech CSE (8.13/10)</span>
+              <div class="about-fact">
+                <span class="about-fact-label">DEGREE &amp; CGPA</span>
+                <strong>B.Tech CSE (8.13/10)</strong>
               </div>
-              <div>
-                <span class="text-dim" style="font-size:0.8rem; font-family:var(--font-mono); display:block;">EMAIL</span>
-                <span style="font-weight:600;">chhavidubey2224@gmail.com</span>
+              <div class="about-fact">
+                <span class="about-fact-label">EMAIL</span>
+                <strong>chhavidubey2224@gmail.com</strong>
               </div>
             </div>
           </div>
@@ -342,7 +287,7 @@
           <div class="about-highlights-wrap">
             <div class="about-highlights">
               
-              <div class="highlight-item tilt-card">
+              <div class="highlight-item">
                 <div class="highlight-icon"><i class="fa-solid fa-cubes"></i></div>
                 <div class="highlight-text">
                   <h4>Clean Architecture &amp; SOLID</h4>
@@ -350,7 +295,7 @@
                 </div>
               </div>
 
-              <div class="highlight-item tilt-card">
+              <div class="highlight-item">
                 <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
                 <div class="highlight-text">
                   <h4>Database Schema Design</h4>
@@ -358,7 +303,7 @@
                 </div>
               </div>
 
-              <div class="highlight-item tilt-card">
+              <div class="highlight-item">
                 <div class="highlight-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <div class="highlight-text">
                   <h4>Spring Security &amp; JWT</h4>
@@ -366,7 +311,7 @@
                 </div>
               </div>
 
-              <div class="highlight-item tilt-card">
+              <div class="highlight-item">
                 <div class="highlight-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
                 <div class="highlight-text">
                   <h4>Unit Testing &amp; Quality</h4>
@@ -394,7 +339,7 @@
         <div class="awards-grid">
           
           <!-- Award 1: Kriyeta 4.0 -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-emerald">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
@@ -409,7 +354,7 @@
           </div>
 
           <!-- Award 2: Prayatna 2.0 -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-cyan">
               <i class="fa-solid fa-fire"></i>
             </div>
@@ -424,7 +369,7 @@
           </div>
 
           <!-- Award 3: 1st Place Poster Making -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-gold">
               <i class="fa-solid fa-medal"></i>
             </div>
@@ -439,7 +384,7 @@
           </div>
 
           <!-- Award 4: Art & Craft Competition -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-cyan">
               <i class="fa-solid fa-palette"></i>
             </div>
@@ -454,7 +399,7 @@
           </div>
 
           <!-- Award 5: NPTEL Elite + Silver -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-gold">
               <i class="fa-solid fa-award"></i>
             </div>
@@ -469,7 +414,7 @@
           </div>
 
           <!-- Award 6: NPTEL Competitive Programming -->
-          <div class="award-card tilt-card">
+          <div class="award-card">
             <div class="award-icon-box award-icon-emerald">
               <i class="fa-solid fa-code-merge"></i>
             </div>
@@ -501,7 +446,7 @@
         <div class="skills-grid">
           
           <!-- Languages -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-code text-accent"></i>
               <h3>Programming Languages</h3>
@@ -514,7 +459,7 @@
           </div>
 
           <!-- Backend Frameworks -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-server text-accent"></i>
               <h3>Backend Frameworks</h3>
@@ -528,7 +473,7 @@
           </div>
 
           <!-- ORM & Persistence -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-database text-accent"></i>
               <h3>Databases &amp; Persistence</h3>
@@ -542,7 +487,7 @@
           </div>
 
           <!-- Testing & QA -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-vial-circle-check text-accent"></i>
               <h3>Testing &amp; Validation</h3>
@@ -555,7 +500,7 @@
           </div>
 
           <!-- Developer Tools -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-wrench text-accent"></i>
               <h3>Developer Tools</h3>
@@ -573,7 +518,7 @@
           </div>
 
           <!-- Core CS Concepts -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <div class="skill-category-title">
               <i class="fa-solid fa-brain text-accent"></i>
               <h3>Core Competencies</h3>
@@ -604,7 +549,7 @@
         <div class="projects-grid">
           
           <!-- Project 1: Job Portal -->
-          <div class="project-card tilt-card">
+          <div class="project-card">
             <div class="project-info">
               <div class="project-meta">
                 <span class="project-dates">August 2025 – December 2025</span>
@@ -667,7 +612,7 @@
           </div>
 
           <!-- Project 2: College Events Hub -->
-          <div class="project-card tilt-card">
+          <div class="project-card">
             <div class="project-info">
               <div class="project-meta">
                 <span class="project-dates">August 2025 – November 2025</span>
@@ -728,7 +673,7 @@
           </div>
 
           <!-- Project 3: Money-Trex -->
-          <div class="project-card tilt-card">
+          <div class="project-card">
             <div class="project-info">
               <div class="project-meta">
                 <span class="project-dates">June 2025 – August 2025</span>
@@ -799,7 +744,7 @@
           <p class="section-subtitle">Type commands or click quick suggestions below to inspect my profile directly from a developer shell.</p>
         </div>
 
-        <div class="terminal-window tilt-card">
+        <div class="terminal-window">
           <div class="terminal-header">
             <div class="window-controls">
               <span class="control-dot red"></span>
@@ -850,7 +795,7 @@
         <div class="certs-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.75rem;">
           
           <!-- Cert 1 -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <span class="award-badge-pill pill-gold"><i class="fa-solid fa-award"></i> Elite + Silver Badge</span>
             <div class="cert-issuer" style="color:var(--accent-cyan); font-weight:600; margin-bottom:0.4rem;">IIT Kharagpur (NPTEL)</div>
             <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Programming in Java</h3>
@@ -863,7 +808,7 @@
           </div>
 
           <!-- Cert 2 -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <span class="award-badge-pill pill-cyan"><i class="fa-solid fa-code"></i> Algorithm Specialist</span>
             <div class="cert-issuer" style="color:var(--accent-cyan); font-weight:600; margin-bottom:0.4rem;">IIT Gandhinagar (NPTEL)</div>
             <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Competitive Programming</h3>
@@ -876,7 +821,7 @@
           </div>
 
           <!-- Cert 3 -->
-          <div class="glass-card tilt-card">
+          <div class="glass-card">
             <span class="award-badge-pill pill-gold"><i class="fa-solid fa-award"></i> Elite Badge</span>
             <div class="cert-issuer" style="color:var(--accent-cyan); font-weight:600; margin-bottom:0.4rem;">IIT Kharagpur (NPTEL)</div>
             <h3 style="font-size:1.25rem; margin-bottom:0.75rem;">Computer Networks &amp; IP</h3>
@@ -908,7 +853,7 @@
           <!-- Timeline Item 1 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-content tilt-card">
+            <div class="timeline-content">
               <span class="timeline-date">July 2025 – August 2025</span>
               <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">Full Stack Java Development Trainee</h3>
               <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">Intensive Training Program</span>
@@ -923,7 +868,7 @@
           <!-- Timeline Item 2 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-content tilt-card">
+            <div class="timeline-content">
               <span class="timeline-date">November 2022 – June 2026</span>
               <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">B.Tech. in Computer Science &amp; Engineering</h3>
               <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">Acropolis Institute of Technology and Research, Indore</span>
@@ -936,7 +881,7 @@
           <!-- Timeline Item 3 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-content tilt-card">
+            <div class="timeline-content">
               <span class="timeline-date">April 2021 – July 2022</span>
               <h3 style="font-size:1.25rem; margin-bottom:0.3rem;">Class XII (CBSE Senior Secondary)</h3>
               <span style="color:var(--accent-cyan); font-size:0.9rem; font-weight:600; display:block; margin-bottom:0.75rem;">S.I.C.A Senior Secondary School, Indore</span>
@@ -965,7 +910,7 @@
           
           <!-- Contact Information Cards -->
           <div>
-            <div class="glass-card tilt-card" style="height: 100%;">
+            <div class="glass-card" style="height: 100%;">
               <h3 style="font-size:1.4rem; margin-bottom:1rem;">Contact Details</h3>
               <p class="text-muted" style="margin-bottom:1.5rem;">
                 Feel free to reach out via email, phone, or LinkedIn. I respond quickly to inquiries about backend engineering roles, hackathon collaborations, and technical opportunities.
@@ -1020,7 +965,7 @@
 
           <!-- Contact Form (Formspree Endpoint) -->
           <div>
-            <div class="glass-card tilt-card">
+            <div class="glass-card">
               <h3 style="font-size:1.4rem; margin-bottom:0.4rem;">Send a Direct Message</h3>
               <p class="text-muted" style="font-size:0.9rem; margin-bottom:1.5rem;">I will reply within 24 hours.</p>
 
@@ -1090,7 +1035,6 @@
 
   <!-- Scripts -->
   <script src="js/particles.js"></script>
-  <script src="js/simulator.js"></script>
   <script src="js/main.js"></script>
   <script src="js/terminal.js"></script>
 </body>

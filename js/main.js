@@ -1,6 +1,6 @@
 /* ==========================================================================
    ADVANCED INTERACTIVITY & ANIMATIONS - CHHAVI DUBEY PORTFOLIO
-   Custom Cursor, 3D Card Tilt, Audio Synth, Dynamic Typing & Scrollspy
+  Custom Cursor, Dynamic Typing & Scrollspy
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,29 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('mouseleave', () => follower.classList.remove('active'));
     });
   }
-
-  /* --------------------------------------------------------------------------
-     2. 3D CARD TILT EFFECT (MOUSEMOVE)
-     -------------------------------------------------------------------------- */
-  const tiltCards = document.querySelectorAll('.tilt-card');
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-  });
 
   /* --------------------------------------------------------------------------
      3. HERO DYNAMIC TYPING ANIMATION
@@ -120,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tabJson.classList.remove('active');
       codeJava.style.display = 'block';
       codeJson.style.display = 'none';
-      playAudio(520, 'sine', 0.05);
     });
 
     tabJson.addEventListener('click', () => {
@@ -128,54 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tabJava.classList.remove('active');
       codeJson.style.display = 'block';
       codeJava.style.display = 'none';
-      playAudio(660, 'sine', 0.05);
-    });
-  }
-
-  /* --------------------------------------------------------------------------
-     5. SOUND EFFECTS SYNTHESIZER (WEB AUDIO API)
-     -------------------------------------------------------------------------- */
-  let soundEnabled = false;
-  let audioCtx = null;
-  const soundBtn = document.getElementById('sound-toggle-btn');
-
-  function initAudio() {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-  }
-
-  function playAudio(freq = 440, type = 'sine', duration = 0.08) {
-    if (!soundEnabled || !audioCtx) return;
-    try {
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {}
-  }
-
-  if (soundBtn) {
-    soundBtn.addEventListener('click', () => {
-      soundEnabled = !soundEnabled;
-      initAudio();
-      const icon = soundBtn.querySelector('i');
-      if (soundEnabled) {
-        soundBtn.classList.add('active');
-        if (icon) icon.className = 'fa-solid fa-volume-high';
-        playAudio(880, 'triangle', 0.12);
-        showToast('Sound effects enabled!');
-      } else {
-        soundBtn.classList.remove('active');
-        if (icon) icon.className = 'fa-solid fa-volume-xmark';
-        showToast('Sound effects muted');
-      }
     });
   }
 
@@ -250,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toastMsg) toastMsg.textContent = message;
 
     toast.classList.add('show');
-    playAudio(750, 'sine', 0.1);
     setTimeout(() => {
       toast.classList.remove('show');
     }, 3200);

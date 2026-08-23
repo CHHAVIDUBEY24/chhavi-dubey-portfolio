@@ -1,6 +1,6 @@
 /* ==========================================================================
    ADVANCED COMPONENT STYLES - CHHAVI DUBEY PORTFOLIO
-   Navbar, Hero, REST API Simulator, Hackathons & Awards, Timeline, Terminal
+  Navbar, Hero, Hackathons & Awards, Timeline, Terminal
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -98,26 +98,6 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-}
-
-.sound-toggle-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.sound-toggle-btn:hover, .sound-toggle-btn.active {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: var(--accent-emerald);
-  color: var(--accent-emerald);
 }
 
 .mobile-toggle {
@@ -459,140 +439,42 @@
   font-weight: 500;
 }
 
-/* --------------------------------------------------------------------------
-   4. INTERACTIVE REST API SIMULATOR
-   -------------------------------------------------------------------------- */
-.simulator-window {
-  background: #080c16;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(16, 185, 129, 0.15);
+.about-section {
+  background: rgba(12, 18, 32, 0.4);
 }
 
-.simulator-controls-bar {
-  background: #111827;
-  padding: 1rem 1.5rem;
+.about-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-copy {
+  margin-bottom: 1.25rem;
+}
+
+.about-copy-last {
+  margin-bottom: 1.5rem;
+}
+
+.about-facts {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-glass);
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 1.25rem;
 }
 
-.api-endpoint-picker {
+.about-fact {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex: 1;
-  min-width: 280px;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.api-select {
-  background: #080d1a;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.86rem;
-  outline: none;
-  width: 100%;
-  cursor: pointer;
-}
-
-.api-select:focus {
-  border-color: var(--accent-emerald);
-}
-
-.api-method-badge {
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-}
-
-.api-method-badge.get {
-  background: rgba(16, 185, 129, 0.2);
-  color: var(--accent-emerald);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-}
-
-.api-method-badge.post {
-  background: rgba(6, 182, 212, 0.2);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(6, 182, 212, 0.4);
-}
-
-.api-url-display {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  color: #cbd5e1;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  flex: 2;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.simulator-body-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  min-height: 380px;
-}
-
-@media (min-width: 992px) {
-  .simulator-body-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.simulator-response-pane {
-  padding: 1.5rem;
-  background: #060911;
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  overflow-y: auto;
-  max-height: 480px;
-}
-
-.simulator-meta-bar {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.status-tag {
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
+.about-fact-label {
+  color: var(--text-dim);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-family: var(--font-mono);
 }
-
-.status-200 {
-  background: rgba(16, 185, 129, 0.2);
-  color: var(--accent-emerald);
-}
-
-.latency-tag {
-  color: var(--accent-cyan);
-  font-size: 0.82rem;
-}
-
-/* JSON Syntax Colors */
-.json-key { color: #38bdf8; font-weight: 600; }
-.json-string { color: #34d399; }
-.json-number { color: #f59e0b; }
-.json-boolean { color: #ec4899; font-weight: 600; }
-.json-null { color: #94a3b8; }
 
 /* --------------------------------------------------------------------------
    5. HACKATHONS & AWARDS SECTION
