@@ -46,15 +46,19 @@ Objective   : Software Engineer with hands-on experience developing backend appl
 `,
     projects: `
 <span class="text-accent">[FEATURED PROJECTS]</span>
-1. <span class="text-gradient font-bold">Job Application Portal</span> (Aug 2025 – Dec 2025) | Spring Boot, JWT, MySQL
+1. <span class="text-gradient font-bold">LifeCompanion</span> (Sep 2026) | Spring Boot 3, Google Gemini AI, Docker, JPA
+   - Mental wellbeing platform with empathetic AI companion, crisis guardrails, mood analytics, & grounding suite.
+   - GitHub: <a href="https://github.com/CHHAVIDUBEY24/LifeCompanion" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/LifeCompanion</a>
+
+2. <span class="text-gradient font-bold">Job Application Portal</span> (Aug 2025 – Dec 2025) | Spring Boot, JWT, MySQL
    - Role-based job management, paginated search APIs, JWT token security, centralized exception handling.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/job-application-portal</a>
 
-2. <span class="text-gradient font-bold">Events Hub</span> (Aug 2025 – Nov 2025) | Spring Boot, Spring Security, MySQL
+3. <span class="text-gradient font-bold">Events Hub</span> (Aug 2025 – Nov 2025) | Spring Boot, Spring Security, MySQL
    - RESTful APIs for events, profiles, and HackFinder team matching engine with JPA/Hibernate.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/college-events-hub" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/college-events-hub</a>
 
-3. <span class="text-gradient font-bold">Money-Trex (Personal Finance Tracker)</span> | Angular, Spring Boot, MySQL
+4. <span class="text-gradient font-bold">Money-Trex (Personal Finance Tracker)</span> | Angular, Spring Boot, MySQL
    - Income/expense categorization analytics & transaction tracking APIs.
    - GitHub: <a href="https://github.com/CHHAVIDUBEY24/Money-Trex.git" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/Money-Trex.git</a>
 `,
