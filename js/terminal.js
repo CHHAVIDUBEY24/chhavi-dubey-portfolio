@@ -48,11 +48,11 @@ Objective   : Software Engineer with hands-on experience developing backend appl
 <span class="text-accent">[FEATURED PROJECTS]</span>
 1. <span class="text-gradient font-bold">LifeCompanion</span> (Sep 2026) | Spring Boot 3, Google Gemini AI, Docker, JPA
    - Mental wellbeing platform with empathetic AI companion, crisis guardrails, mood analytics, & grounding suite.
-   - GitHub: <a href="https://github.com/CHHAVIDUBEY24/LifeCompanion" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/LifeCompanion</a>
+   - Live Demo: <a href="https://lifecompanion-1.onrender.com" target="_blank" style="color:#10b981">lifecompanion-1.onrender.com</a> | GitHub: <a href="https://github.com/CHHAVIDUBEY24/LifeCompanion" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/LifeCompanion</a>
 
-2. <span class="text-gradient font-bold">Job Application Portal</span> (Aug 2025 – Dec 2025) | Spring Boot, JWT, MySQL
+2. <span class="text-gradient font-bold">JobSphere (Job Portal)</span> (Aug 2025 – Dec 2025) | Spring Boot, JWT, MySQL, Render
    - Role-based job management, paginated search APIs, JWT token security, centralized exception handling.
-   - GitHub: <a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/job-application-portal</a>
+   - Live Demo: <a href="https://jobsphere1-89bf.onrender.com" target="_blank" style="color:#10b981">jobsphere1-89bf.onrender.com</a> | GitHub: <a href="https://github.com/CHHAVIDUBEY24/job-application-portal" target="_blank" style="color:#06b6d4">github.com/CHHAVIDUBEY24/job-application-portal</a>
 
 3. <span class="text-gradient font-bold">Events Hub</span> (Aug 2025 – Nov 2025) | Spring Boot, Spring Security, MySQL
    - RESTful APIs for events, profiles, and HackFinder team matching engine with JPA/Hibernate.
